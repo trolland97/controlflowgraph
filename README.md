@@ -1,6 +1,6 @@
 ### Control Flow Graph (JavaScript)
 
-[![N|Solid](https://img.favpng.com/2/14/21/javascript-logo-html-comment-python-png-favpng-VqD4hj7UJi3zeepcd7kVbTnZG.jpg)](https://nodesource.com/products/nsolid)
+[![N|Solid](https://thesafety.us/images/articles/javascript-logo.png)](https://nodesource.com/products/nsolid)
 
 
 
