@@ -37,6 +37,12 @@ A STYX Control Flow Gráfja ECMAScript 5 verziót használ(JavaScript)
 AST (Abstract Syntax Tree) JavaScript forráskódból AST (Esprimát) állit elő
 [AST](https://esprima.org/demo/parse.html)
 
+[ESCONTROL](https://www.npmjs.com/package/escontrol)
+
+[ESGRAPH](https://www.npmjs.com/package/esgraph)
+
+[AST-FLOW-GRAPH](https://www.npmjs.com/package/ast-flow-graph)
+
 
 
 
