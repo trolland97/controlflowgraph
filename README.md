@@ -1,6 +1,6 @@
 ### Control Flow Graph (JavaScript)
 
-Basic block:
+# Basic block:
 egy olyan programozási utasítás lineáris sorrendje, amelynek van egy
 belépési pontja (az első végrehajtott utasítás) és egy kilépési pontja (a
 utoljára végrehajtott utasítás).
@@ -13,7 +13,7 @@ Meghatározza az összes lehetséges végrehajtási utat.
 [STYX](https://github.com/mariusschulz/styx)
 
 
-###Két kitüntetett blokk van, az ENTRY BLOCK és az EXIT BLOCK.
+# Két kitüntetett blokk van, az ENTRY BLOCK és az EXIT BLOCK.
 
 -belépési blokk (entry block)
 Az a blokk, amin keresztül beléphetünk a gráfba
