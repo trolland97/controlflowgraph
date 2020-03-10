@@ -7,8 +7,6 @@ utoljára végrehajtott utasítás).
 A CFG egy irányított gráf, amelyben a csomópontok vannak, az élek pedig az útvonalakat képviselik.
 Meghatározza az összes lehetséges végrehajtási utat.
 
-[![N|Solid](https://thesafety.us/images/articles/javascript-logo.png)](https://nodesource.com/products/nsolid)
-
 ### CFG's
 [STYX](https://github.com/mariusschulz/styx)
 
@@ -62,13 +60,66 @@ Csináltam npm init-el egy új projektet. (npm init node-js project example)
 -   pl: input: "var x = 2+2";
 -   output: 
 
-
+Script {
+  type: 'Program',
+  body:
+   [ VariableDeclaration {
+       type: 'VariableDeclaration',
+       declarations: [Array],
+       kind: 'var' } ],
+  sourceType: 'script' }
 
 ### STYX
 
 -  control flow graphot csinál az AST-ből, amit pl az esprima parse függvényének az outputja
 -  pl ha a styx parse függvényének odaadjuk az esprima parse függvényének az outputját, akkor az output:
 
+{
+  "program": {
+    "flowGraph": {
+      "nodes": [
+        {
+          "id": 1,
+          "type": "Entry"
+        },
+        {
+          "id": 2,
+          "type": "SuccessExit"
+        }
+      ],
+      "edges": [
+        {
+          "from": 1,
+          "to": 2,
+          "type": "Normal",
+          "label": "x = 2 + 2",
+          "data": {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "x"
+            },
+            "init": {
+              "type": "BinaryExpression",
+              "operator": "+",
+              "left": {
+                "type": "Literal",
+                "value": 2,
+                "raw": "2"
+              },
+              "right": {
+                "type": "Literal",
+                "value": 2,
+                "raw": "2"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "functions": []
+}
 
 A Styx verzió bővebb mint az Esprima.
 ECMAScript 5-t használ (JavaScript)
