@@ -44,6 +44,84 @@ AST (Abstract Syntax Tree) JavaScript forráskódból AST (Esprimát) állit el�
 [AST-FLOW-GRAPH](https://www.npmjs.com/package/ast-flow-graph)
 
 
+# TESZT
 
+Csináltam npm init-el egy új projektet. (npm init node-js project example)
 
+    -npm install styx
 
+    -npm install esprima
+
+    -index.js - be beirtam a kódót
+
+    -node index.js elinditottam
+
+### ESPRIMA
+
+-   parse függvény az inputból (string) csinál JavaScript AST-t
+-   pl: input: "var x = 2+2";
+-   output: 
+
+Script {
+  type: 'Program',
+  body:
+   [ VariableDeclaration {
+       type: 'VariableDeclaration',
+       declarations: [Array],
+       kind: 'var' } ],
+  sourceType: 'script' }
+
+### STYX
+
+-  control flow graphot csinál az AST-ből, amit pl az esprima parse függvényének az outputja
+-  pl ha a styx parse függvényének odaadjuk az esprima parse függvényének az outputját, akkor az output:
+
+{
+  "program": {
+    "flowGraph": {
+      "nodes": [
+        {
+          "id": 1,
+          "type": "Entry"
+        },
+        {
+          "id": 2,
+          "type": "SuccessExit"
+        }
+      ],
+      "edges": [
+        {
+          "from": 1,
+          "to": 2,
+          "type": "Normal",
+          "label": "x = 2 + 2",
+          "data": {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "x"
+            },
+            "init": {
+              "type": "BinaryExpression",
+              "operator": "+",
+              "left": {
+                "type": "Literal",
+                "value": 2,
+                "raw": "2"
+              },
+              "right": {
+                "type": "Literal",
+                "value": 2,
+                "raw": "2"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "functions": []
+}
+
+A Styx verzió bővebb mint az Esprima.
+ECMAScript 5-t használ (JavaScript)
