@@ -63,12 +63,19 @@ Csináltam npm init-el egy új projektet. (npm init node-js project example)
 -   output: 
 
 Script {
+
   type: 'Program',
+
   body:
+
    [ VariableDeclaration {
+
        type: 'VariableDeclaration',
+
        declarations: [Array],
+
        kind: 'var' } ],
+
   sourceType: 'script' }
 
 ### STYX
@@ -77,50 +84,95 @@ Script {
 -  pl ha a styx parse függvényének odaadjuk az esprima parse függvényének az outputját, akkor az output:
 
 {
+
   "program": {
+
     "flowGraph": {
+
       "nodes": [
+
         {
+
           "id": 1,
+
           "type": "Entry"
+
         },
+
         {
+
           "id": 2,
+
           "type": "SuccessExit"
+
         }
+
       ],
+
       "edges": [
+
         {
+
           "from": 1,
+
           "to": 2,
+
           "type": "Normal",
+
           "label": "x = 2 + 2",
+
           "data": {
+
             "type": "VariableDeclarator",
+
             "id": {
+
               "type": "Identifier",
+
               "name": "x"
+
             },
+
             "init": {
+
               "type": "BinaryExpression",
+
               "operator": "+",
+
               "left": {
+
                 "type": "Literal",
+
                 "value": 2,
+
                 "raw": "2"
+
               },
+
               "right": {
+
                 "type": "Literal",
+
                 "value": 2,
+
                 "raw": "2"
+
               }
+
             }
+
           }
+
         }
+
       ]
+
     }
+
   },
+
   "functions": []
+  
 }
 
 A Styx verzió bővebb mint az Esprima.
